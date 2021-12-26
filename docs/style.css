@@ -1,0 +1,91 @@
+/*
+colors
+#000 ----- цвет фона
+#fe9f09 ----- боковые кнопки (оранжевый)
+#333333 ----- основные кнопки (серый)
+#a5a6a5 ----- верхние кнопки (светло-серый)
+*/
+/*работа с корпусом*/
+.calc {
+    margin: 50px auto; /*выравниваем посередине*/
+    width: 300px; /*ширина*/
+    height: 500px; /*высота*/
+    border: 1px solid #000; 
+    border-radius: 20px;
+    background: #000; 
+    color: white; 
+    font-family: Arial;
+    padding: 18px;
+    box-shadow: 4px 4px 4px #4f4f4f; 
+}
+
+/*работа над дисплеем*/
+.calc-screen {
+    height: 130px;
+    padding: 10px;
+    display: grid;
+    justify-items: end; /*перемещение дисплея в правую часть корпуса*/
+    align-items: end;
+    margin-bottom: 20px;
+}
+
+.calc-screen p {
+    text-align: right;
+    font-size: 4rem;
+    margin: 0;
+}
+
+/*выравнивание кнопок*/
+.buttons {
+    display: grid;
+    grid-template-areas:
+    "ac ac percent division"
+    "seven eight nine myltiply"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal"; /*кнопка "zero" х2 для дальнейших изменений*/
+    grid-gap: 7px;
+    justify-items: center;
+}
+
+/*работа с кнопками*/
+.btn {
+    width: 60px;
+    height: 60px;
+    background: #333;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px; /*выравнивание текста по высоте*/
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none; /*не позволяет выделять текст при лвойном клике*/
+}
+ /*изменение яркости при наведении на кнопку*/
+.btn:hover {
+   filter: brightness(115%);
+}
+/*изменение яркости при нажатии на кнопку*/
+.btn:active {
+    filter: brightness(90%);
+}
+
+/*раскраска кнопок*/
+.btn.bg-grey {
+    background: #a5a6a5;
+}
+.btn.bg-orange {
+    background: #fe9f09;
+}
+
+/*модификация кнопки "0"*/
+.btn.zero {
+    grid-area: zero; /*см. 46 строку*/
+    width: 100%;
+    border-radius: 34px;
+}
+
+.btn.ac {
+    grid-area: ac;
+    width: 100%;
+    border-radius: 34px;
+}
